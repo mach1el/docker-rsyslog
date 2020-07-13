@@ -11,7 +11,8 @@ Rsyslog server on docker
     cd docker-rsyslog && docker build -t rsyslog .
     
 ### Run
-    docker run --cap-add SYSLOG \
+    docker run \
+    --cap-add SYSLOG \
     --restart always \
     -v /var/log:/var/log \
     -p 514:514 \
@@ -28,8 +29,8 @@ Rsyslog server on docker
 
 | Param | Meaning |
 | :---:   | :-: |
-| cap-add | Allow container to perform privileged syslog(2) |
-| restart always | Restart container regardless of the exit status |
+| --cap-add SYSLOG | Allow container to perform privileged syslog(2) |
+| --restart always | Restart container regardless of the exit status |
 | -v /var/log:/var/log | Mount host /var/log directory in container /var/log directory |
 | -p 514:514 | Bind Host TCP 514 port to contaainer TCP 514 port |
 | -p 514:514/udp | Bind Host UDP 514 port to contaainer UDP 514 port |
