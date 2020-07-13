@@ -10,7 +10,16 @@ Rsyslog server on docker
     git clone https://github.com/mach1el/docker-rsyslog.git
     cd docker-rsyslog && docker build -t rsyslog .
     
-### Run
+### Run from hub
+    docker run docker run \
+    --cap-add SYSLOG \
+    --restart always \
+    -v /var/log:/var/log \
+    -p 514:514 \
+    -p 514:514/udp \
+    --name rsyslog mich43l/rsyslog
+
+### Run from local image
     docker run \
     --cap-add SYSLOG \
     --restart always \
