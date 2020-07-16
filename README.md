@@ -1,8 +1,7 @@
 # Docker rsyslog
-
-![ver](https://img.shields.io/badge/ver-1.0-pink)
 ![license](https://img.shields.io/github/license/mach1el/docker-rsyslog?color=blue&style=plastic)
-![docker](https://img.shields.io/badge/docker-container-magenta)
+![dockerautomated](https://img.shields.io/docker/automated/mich43l/rsyslog?style=plastic)
+![imgsize](https://img.shields.io/docker/image-size/mich43l/rsyslog/latest?color=red&style=plastic)
 
 Rsyslog server on docker
  
