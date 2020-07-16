@@ -11,29 +11,14 @@ Rsyslog server on docker
     cd docker-rsyslog && docker build -t rsyslog .
     
 ### Run from hub
-    docker run docker run \
-    --cap-add SYSLOG \
-    --restart always \
-    -v /var/log:/var/log \
-    -p 514:514 \
-    -p 514:514/udp \
-    --name rsyslog mich43l/rsyslog
+    docker run docker run --cap-add SYSLOG --restart always -v /var/log:/var/log -p 514:514 -p 514:514/udp --name rsyslog mich43l/rsyslog
 
 ### Run from local image
-    docker run \
-    --cap-add SYSLOG \
-    --restart always \
-    -v /var/log:/var/log \
-    -p 514:514 \
-    -p 514:514/udp \
-    --name rsyslog rsyslog
+    docker run --cap-add SYSLOG --restart always -v /var/log:/var/log -p 514:514 -p 514:514/udp --name rsyslog rsyslog
     
 ### Test log server
-    docker run \
-    --log-driver syslog \
-    --log-opt syslog-address=tcp://syslog_ip:514 \
-    alpine
-    
+    docker run --log-driver syslog --log-opt syslog-address=tcp://syslog_ip:514 alpine
+
 ### Explain
 
 | Param | Meaning |
